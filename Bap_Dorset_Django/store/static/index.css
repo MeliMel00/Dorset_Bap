@@ -1,0 +1,605 @@
+/***
+    The new CSS reset - version 1.7.3 (last updated 7.8.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+ *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+:root {
+    --main-bg-color: #2FB5B6;
+    --second-bg-color: #F4D836;
+    --third-bg-color: #EC6A8C;
+}
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: 'Montserrat', serif;
+    font-size: 12px;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu, li {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+    -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+.m-width{
+    max-width: 1236px;
+    margin: 0 auto;
+    
+}
+.m-width-s {
+    max-width: 995px;
+    margin: 0 auto;
+}
+.burger{
+    display: none;
+}
+nav{
+    background-color: #fff;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 128px;
+    font-weight: bold;
+}
+nav ul{
+    display: inline-flex;
+    align-items: center;
+    gap: 4rem;
+}
+nav .right-nav{
+    display: inline-flex;
+    gap: 1rem;
+}
+.logo-nav{
+    height: 50px;
+    width: auto;
+}
+nav li:last-of-type a, nav ul li a{
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid white;
+}
+nav li:last-of-type a:hover, nav ul li a:hover{
+    border-bottom: 1px solid black;
+    transition: all 0.3s ease-in-out;
+}
+header{
+    height: 626px;
+    width: 100%;
+    background-image: url(../static/img/backgroundheader.png);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.title-header{
+    text-align: center;
+    color: white;
+}
+header h1{
+    font-size: 4rem;
+    font-weight: bold;
+}
+header h2{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+.button-header{
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 7.5rem;
+}
+
+.button-header a {
+    padding: 1rem 4rem;
+    background-color: #fff;
+    color: var(--main-bg-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.header_band_below{
+    height: 250px;
+    width: 100%;
+    background-color: rgba(217, 217, 217, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.header_band_below h3 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.header_band_below h4{
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
+.card_index_information{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    
+}
+.card_index_information:nth-of-type(2n){
+    flex-direction: row-reverse;
+}
+.card_text{
+    width: 50%;
+    min-width: 300px;
+}
+
+.card_text h3{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
+.card_text p{
+    font-size: 1.5rem;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding: 25px 0;
+    color: white;
+    background-color: #EDEDED;
+    margin-top: 50px;
+}
+.footer-up{
+    width: 100%;
+    text-align: center;
+}
+.footer-down{
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-down span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.footer-down ul {
+    text-align: center;
+}
+.footer-down li{
+    padding:10px 0 ;
+    font-size: 1.25rem;
+    color: #000;
+}
+.footer-down ul:last-of-type span {
+    text-decoration: underline;
+}
+.ticket-footer {
+    display: inline-flex;
+    width: fit-content;
+    height: fit-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background-color: #D9D9D9;
+    font-weight: bold;
+    padding: 10px 10px !important;
+    border-radius: 5px;
+}
+.header_band_below_map{
+    height: fit-content;
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+}
+.header_band_below_map h2{
+    font-size: 4rem;
+    font-weight: bolder;
+}
+.map-img {
+    width: 100%;
+    height: auto;
+}
+
+.daily-program{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-bottom: 100px;
+}
+
+.daily-program-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: fit-content;
+    height: 100%;
+}
+.daily-program-title p {
+    font-size: 2.5rem;
+}
+.daily-program-title .black-line{
+    background-color: black;
+    height: 350px;
+    width: 1px;
+    margin: 0 auto;
+}
+.daily-program-desc {
+    padding-left: 5rem;
+}
+.daily-program-desc ul {
+    padding-top: 2rem;
+}
+.daily-program-desc li {
+    display: inline-flex;
+    align-items: center;
+}
+.daily-program-desc ul li:first-child p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-left: 1rem;
+}
+
+.daily-program-desc ul li:last-child {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+
+.agenda-title-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 50px 0;
+}
+
+.agenda-title-container h2{
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+.agenda-title-container p{
+    font-size: 1.5rem;
+    font-weight: lighter;
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+}
+.container_card{
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+.ticket_title_top{
+    background-color: #D9D9D9;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+}
+.pass-3-days{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    padding-bottom: 5rem;
+}
+.pass-3-days-right{
+    display: flex;
+    flex-direction: column;
+
+}
+.pass-3-days-right p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-bottom: 2rem;
+}
+.pass-3-days-right a {
+    display: inline-flex;
+    background-color: #000;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 10px;
+    color: white;
+    border-radius: 0.5rem;
+    gap: 1rem;
+
+}
+.ticket_title_top h2{
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: black;
+}
+.ticket_card:nth-of-type(2n + 1) span, .ticket_card:nth-of-type(2n + 1) p{
+    color: white !important;
+}
+.ticket_card{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    border-radius: 0.5rem;
+
+}
+.ticket_card:nth-of-type(2){
+    background-color: var(--main-bg-color);
+}
+.ticket_card:nth-of-type(3){
+    background-color: var(--second-bg-color);
+}
+.ticket_card:nth-of-type(4){
+    background-color: var(--third-bg-color);
+}
+.ticket_card_right{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.quantity_input{
+    background-color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    width: fit-content;
+    text-align: center;
+    border: 1px solid black;
+}
+.ticket_card_left{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.ticket_card_left > div p:first-of-type{
+    padding-bottom: 1rem;
+}
+.ticket_card_right form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+.ticket_card_right span:first-of-type{
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+.ticket_card_left span{
+    font-size: 1.75rem;
+    font-weight: bold;
+    padding-bottom: 2rem;
+}
+.ticket_card_left p{
+    font-size: 1.5rem;
+    max-width: 60%;
+    font-weight: 600;
+}
+.btn_add_cart{
+    padding: 0.5rem 2rem;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap : 1rem;
+}
+.quantity_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quantity_div img   {
+    cursor: pointer;
+}
+
+
+.cart_history_row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 25px 0;
+    border-bottom: 1px solid #000;
+    width: 75%;
+    margin: 0 auto;
+}
+.cart_history_row p:last-of-type{
+    margin-left: auto;
+}
+.cart_history_row h2 {
+    margin-right: 25px;
+}
+.cart_section{
+    height: calc(100vh - 278px);
+}
+.delete_cart{
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    font-weight: bolder;
+    text-align: center;
+    color: white;
+    background-color: #2a2ab2;
+    border: 2px solid #2a2ab2;
+    width: fit-content;
+    margin: 15px auto;
+}
+.delete_cart:hover{
+    background-color: white;
+    color: #2a2ab2;
+    border: 2px solid #2a2ab2;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.cart_history_header h1{
+    font-size: 1.75rem;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-align: center;
+    padding: 25px 0;
+}
+.form_div {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 25px 0;
+    margin: 0 auto;
+
+}
+.form_div input {
+    padding: 5px;
+    border: 1px solid rgb(132, 132, 132);
+    border-radius: 2px;
+    width: 100%;
+}
+
+.form_div p {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form_div #submit {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 10px 5px;
+    background-color: #000;
+    color: white;
+    text-align: center;
+}
+
+
+.title_form h1 {
+    font-size: 1.75rem;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-align: center;
+    padding: 25px 0;
+}
+.form_below p {
+    text-align: center;
+    padding: 25px 0;
+}
+
+.form_below p a {
+    color: rgb(42, 42, 178);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.log_section {
+    height: calc(100vh - 278px);
+}
+@media screen and (max-width: 1024px ){
+.cart_history_row{
+    width: calc(100% - 40px);
+
+}
+.card_image_div img {
+    width: 250px;
+}
+.m-width-s, .m-width{
+    padding: 0 20px;
+}
+.container_card{
+    padding-top: 5rem;
+}
+}

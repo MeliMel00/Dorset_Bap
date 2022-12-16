@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="band_below_nav"></div>
+
+<section class="m-width log_section">
+    <div class="title_form">
+        <h1>Connexion</h1>
+    </div>
+<form method="POST" class="form_div">
+    {% csrf_token %}
+    <p>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username">
+    </p>
+    <p>
+        <label for="password" >Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+    </p>
+    <button type="submit" id="submit">Connexion</button>
+</form>
+   <div class="form_below">
+        <p>Don't have an account ? <a href="{% url 'signup' %}">Register</a></p>
+   </div>
+</section>
+{% endblock %}

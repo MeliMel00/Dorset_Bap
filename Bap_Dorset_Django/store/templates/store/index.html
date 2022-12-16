@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<header>
+    <div class="title-header">
+        <h1>TOGETHER</h1>
+        <h2>July 24-25-26th -Hudson gardens - Detroit</h2>
+    </div>
+    <div class="button-header">
+        <li><a href="{% url 'plan-agenda' %}">Program</a></li>
+        <li><a href="{% url 'ticket-office' %}">Ticket</a></li>
+        <li><a href="{% url 'index' %}">More Info</a></li>
+
+    </div>
+</header>
+<div class="header_band_below">
+        <h3>A FESTIVAL FOR ANXIETY ?</h3>
+        <h4>We believe that anxious people need to understand and see that they are not alone in their disorder.</h4>
+</div>
+<section class="m-width-s">
+    <div class="card_index_information">
+        <div class="card_image_div">
+            <img src="{% static 'img/general_anxiety.png' %}" alt="" class="card_image">
+        </div>
+        <div class="card_text">
+            <h3>General Anxiety Disorder</h3>
+            <p>Anxiety is something that everyone has felt during his life ; it is a feeling that can be compared to stress but it has it’s nuances. Anxiety can be described as a constant train of negative or worrying thaughts that can easily have a big tole on your life if you are not carefull enough. If it gets bad, you can have what is called an anxiety attack, which for anyone who had one it is life will tell you it is a pretty bad time. This festival is made to help you counter-act those effect and have fun while doing it. </p>
+        </div>
+    </div>
+    <div class="card_index_information">
+        <div class="card_image_div">
+            <img src="{% static 'img/about_us.png' %}" alt="" class="card_image">
+        </div>
+        <div class="card_text">
+            <h3>General Anxiety Disorder</h3>
+            <p>Anxiety is something that everyone has felt during his life ; it is a feeling that can be compared to stress but it has it’s nuances. Anxiety can be described as a constant train of negative or worrying thaughts that can easily have a big tole on your life if you are not carefull enough. If it gets bad, you can have what is called an anxiety attack, which for anyone who had one it is life will tell you it is a pretty bad time. This festival is made to help you counter-act those effect and have fun while doing it. </p>
+        </div>
+    </div>   
+    <div class="card_index_information">
+        <div class="card_image_div">
+            <img src="{% static 'img/image_03.png' %}" alt="" class="card_image">
+        </div>
+        <div class="card_text">
+            <h3>General Anxiety Disorder</h3>
+            <p>Anxiety is something that everyone has felt during his life ; it is a feeling that can be compared to stress but it has it’s nuances. Anxiety can be described as a constant train of negative or worrying thaughts that can easily have a big tole on your life if you are not carefull enough. If it gets bad, you can have what is called an anxiety attack, which for anyone who had one it is life will tell you it is a pretty bad time. This festival is made to help you counter-act those effect and have fun while doing it. </p>
+        </div>
+    </div>      
+    </div>
+
+    {% comment %} <div class="container_card">
+        {% for product in products %}
+        <div class="card_travel ">
+            <h2>{{product.name }}</h2>
+            <div class="black_opacity_image"></div>
+            <img src="{{ product.thumbnail.url }}" alt="{{ product.name }}"
+             class="image_card">
+            <div class="card_bottom">
+                <a href="{{ product.get_absolute_url }}">More info</a>
+                <span>€{{product.price}}/Person</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div> {% endcomment %}
+</section>
+
+
+{% endblock %}

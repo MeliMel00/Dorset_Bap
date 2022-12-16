@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<header>
+    <div class="title-header">
+        <h1>TOGETHER</h1>
+        <h2>July 24-25-26th -Hudson gardens - Detroit</h2>
+    </div>
+    <div class="button-header">
+        <li><a href="{% url 'plan-agenda' %}">Program</a></li>
+        <li><a href="{% url 'ticket-office' %}">Ticket</a></li>
+        <li><a href="{% url 'index' %}">More Info</a></li>
+
+    </div>
+</header>
+<div class="header_band_below_map">
+        <h2>The Map</h2>
+</div>
+<div class="map m-width">
+    <img src="{% static 'img/plan.jpg' %}" alt="map" class="map-img">
+</div>
+<div class="agenda-title-container">
+        <h2>Agenda</h2>
+        <p>As May is the month dedicated to mental health, we have obviously chosen to organize our festival during this month.</p>
+</div>
+
+<div class="m-width daily-program">
+    <div class="daily-program-title">
+        <p>Fri.</p>
+        <p>19<span>th</span></p>
+        <div class="black-line"></div>
+    </div>
+    <div class="daily-program-desc">
+        <ul>
+            <li>
+                <img src="{% static 'img/Vector_74.svg' %}" alt="map" class="">
+                <p>Concert - 1pm to 3pm - location 2</p>
+            </li>
+            <li>A concert of Selena Gomez will be the oppenning of the festival. Being an artist that talked a lot about anxiety we thaught that she could really speak to the people on a more personnal level. We hope you can be there!</li>
+        </ul>
+        <ul>
+            <li>
+                <img src="{% static 'img/Vector_75.svg' %}" alt="map" class="">
+                <p>Guided meditation - 5pm to 7.30pm- location 3</p>
+            </li>
+            <li>During ou entire festival, we will have dedicated meditation zones that would be open all the time but we thaught having a guided session at the beginning of the festival to peak the interest of the people that never tried it, but still want to learn about it.</li>
+        </ul>
+        <ul>
+            <li>
+                <img src="{% static 'img/Vector_76.svg' %}" alt="map" class="">
+                <p>Film - 8pm - location 5 </p>
+            </li>
+            <li>To end our first day we will all have the opportunity to watch a movie with every-one and relax before leaving the festival. We want every on to leave the festival with a sense of peace and calm before going to sleep.</li>
+        </ul>
+    </div>
+</div>
+<div class="m-width daily-program">
+    <div class="daily-program-title">
+        <p>Fri.</p>
+        <p>19<span>th</span></p>
+        <div class="black-line"></div>
+    </div>
+    <div class="daily-program-desc">
+        <ul>
+            <li>
+                <img src="{% static 'img/Vector_74.svg' %}" alt="map" class="">
+                <p>Concert - 15pm - location</p>
+            </li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et lorem non eget massa, mi. Aliquam id elementum nulla pellentesque aliquam metus, odio erat. Facilisis morbi semper sed odio. Id lacus, consectetur est ipsum facilisis auctor interdum.</li>
+        </ul>
+        <ul>
+            <li>
+                <img src="{% static 'img/Vector_75.svg' %}" alt="map" class="">
+                <p>Concert - 15pm - location</p>
+            </li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et lorem non eget massa, mi. Aliquam id elementum nulla pellentesque aliquam metus, odio erat. Facilisis morbi semper sed odio. Id lacus, consectetur est ipsum facilisis auctor interdum.</li>
+        </ul>
+        <ul>
+            <li>
+                <img src="{% static 'img/Vector_76.svg' %}" alt="map" class="">
+                <p>Concert - 15pm - location</p>
+            </li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et lorem non eget massa, mi. Aliquam id elementum nulla pellentesque aliquam metus, odio erat. Facilisis morbi semper sed odio. Id lacus, consectetur est ipsum facilisis auctor interdum.</li>
+        </ul>
+    </div>
+</div>
+<div class="m-width daily-program">
+    <div class="daily-program-title">
+        <p>Fri.</p>
+        <p>19<span>th</span></p>
+        <div class="black-line"></div>
+    </div>
+    <div class="daily-program-desc">
+        <ul>
+            <li>
+                <img src="{% static 'img/Vector_74.svg' %}" alt="map" class="">
+                <p>Concert - 15pm - location</p>
+            </li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et lorem non eget massa, mi. Aliquam id elementum nulla pellentesque aliquam metus, odio erat. Facilisis morbi semper sed odio. Id lacus, consectetur est ipsum facilisis auctor interdum.</li>
+        </ul>
+        <ul>
+            <li>
+                <img src="{% static 'img/Vector_75.svg' %}" alt="map" class="">
+                <p>Concert - 15pm - location</p>
+            </li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et lorem non eget massa, mi. Aliquam id elementum nulla pellentesque aliquam metus, odio erat. Facilisis morbi semper sed odio. Id lacus, consectetur est ipsum facilisis auctor interdum.</li>
+        </ul>
+        <ul>
+            <li>
+                <img src="{% static 'img/Vector_76.svg' %}" alt="map" class="">
+                <p>Concert - 15pm - location</p>
+            </li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et lorem non eget massa, mi. Aliquam id elementum nulla pellentesque aliquam metus, odio erat. Facilisis morbi semper sed odio. Id lacus, consectetur est ipsum facilisis auctor interdum.</li>
+        </ul>
+    </div>
+</div>
+
+
+{% endblock %}

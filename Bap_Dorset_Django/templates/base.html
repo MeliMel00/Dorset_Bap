@@ -1,0 +1,97 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TOGETHER</title>
+</head>
+{% comment %} <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% endcomment %}
+<link rel="stylesheet" href="{% static 'index.css' %}">
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Montserrat">
+</head>
+<body>
+    <nav class="m-width">
+        <li><a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt="My image" class="logo-nav"></a></li>
+        <ul>
+            <li><a href="{% url 'index' %}">Présentation</a></li>
+            <li><a href="{% url 'plan-agenda' %}">Plan & Agenda</a></li>
+            <li><a href="{% url 'ticket-office' %}">Ticket</a></li>
+        </ul>
+        {% if user.is_authenticated %}
+        <li class="right-nav">
+            <a href="{% url 'logout' %}">Logout</a>
+            {% if user.cart %}
+            <a href="{% url 'cart'%}">My Cart ({{user.cart.orders.count}})</a>
+            {% endif %} 
+        </li>
+        
+        {% else %}
+        <li class="right-nav"><a href="{% url 'login' %}">Login</a><a href="{% url 'signup' %}">Register</a> </li>
+        
+
+        {% endif %}
+    </nav>
+    <div class="burger">
+        <span class="burger-close close-div">Close</span>
+        <div class="menu-mobile-content">
+            <span class="scroll_to_projects">PROJECTS</span>
+            <span class="scroll_to_about">ABOUT</span>
+            <span class="scroll_to_hia1">COMPETENCE</span>
+        </div>
+</div>
+{% block content %}
+
+
+
+{% endblock %}
+
+<footer>
+    <div class="footer">
+        <div class="footer-up m-width-s">
+            <li><a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt="My image" class="logo-nav"></a></li>
+        </div>
+        <div class="footer-down m-width-s">
+            <ul>
+                <li>
+                    <span>Address</span>
+                </li>
+                <li>
+                    July 24-25-26th
+                </li>
+                <li>
+                    Hudson gardens - Detroit
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <span>About us</span>
+                </li>
+                <li>
+                    <a href="{% url 'plan-agenda' %}">Plan & Agenda</a>
+                </li>
+                <li>
+                    <a href="{% url 'index' %}">Présentation</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <span>Join our social medias !</span>
+                </li>
+                <a href="">
+                    <li class="ticket-footer">
+                        Ticket buying
+                        <img src="{% static 'img/carbon_ticket_black.png' %}" alt="" class="">
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+<style>
+
+    
+</style>

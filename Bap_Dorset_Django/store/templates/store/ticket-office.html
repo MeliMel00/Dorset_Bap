@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<header>
+    <div class="title-header">
+        <h1>TOGETHER</h1>
+        <h2>July 24-25-26th -Hudson gardens - Detroit</h2>
+    </div>
+    <div class="button-header">
+        <li><a href="{% url 'index' %}">Program</a></li>
+        <li><a href="{% url 'index' %}">Ticket</a></li>
+        <li><a href="{% url 'index' %}">More Info</a></li>
+
+    </div>
+</header>
+
+<div class="container_card m-width">
+    <div class="ticket_title_top">
+       <h2>Ticket buying</h2>
+       <img src="{% static 'img/carbon_ticket_black.png' %}" alt="" class="">
+    </div>
+    {% for product in products %}
+    <div class="ticket_card ">
+        <div class="ticket_card_left">
+            <span>{{product.name }}</span>
+            <div>
+                <p>{{product.description }}</p>
+                <p> This ticket does not include food and drinks at the event.</p>
+            </div>
+        </div>
+        <div class="ticket_card_right">
+            <span>{{product.price }} €</span>
+        {% if user.is_authenticated %}
+            {% if product.stock > 0 %}
+            <form>
+                <div class="quantity_div">
+                    <img src="{% static 'img/arrowup2.svg' %}" alt="" class="card_image">
+                    <input type="number" class="quantity_input" name="quantity" min="1" max="10" value="0">
+                    <img src="{% static 'img/arrowdown2.svg' %}" alt="" class="card_image">
+                </div>
+                <span><a href="{% url 'add-to-cart' product.slug %}" class="btn_add_cart">Buy Ticket  <img src="{% static 'img/carbon_ticket.png' %}" alt="" class=""></a> </span>
+            </form>
+                {% else %}
+                <span>Out of stock</span>
+            </form>
+            {% endif%}
+
+        {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+    <div class="pass-3-days">
+            <img src="{% static 'img/school.png' %}" alt="" class="">
+            <div class="pass-3-days-right">
+                <p>Pass 3 days, School.</p>
+                <a href="">Contact us<img src="{% static 'img/carbon_ticket.png' %}" alt="" class=""> </a>
+            </div>
+    </div>
+</div> 
+
+
+{% endblock %}
